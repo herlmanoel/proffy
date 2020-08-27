@@ -7,7 +7,9 @@ import logoImg from '../../assets/images/logo.svg';
 import './style.css';
 
 interface PageHeaderProps {
-    title: string
+    title: string;
+    // ? -> não é uma prop obrigatória 
+    description?: string;
 }
 
 const PageHeader: React.FC<PageHeaderProps> = (props) => {
@@ -22,6 +24,7 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
 
         <div className="header-content">
         <strong>{props.title}</strong>
+    {props.description && <p>{props.description}</p>}
         {props.children}
         </div>
     </header>
